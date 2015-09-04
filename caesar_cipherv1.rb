@@ -64,10 +64,16 @@ end
 # 3. Uses the .each_char method
 # 4. Uses conditional assignment.  DRY
 # 5. Accounts for z to a wraparound using modulus
-# 6. The code is easily readable.
+# 6. The code is easily readable 
+# 	and the functionality is clear even without commenting
+#
 # 	It is clear from just glancing at the code that 
 # 	there are three cases of characters
 # 	uppercase, lowercase, and non-alphabet characters
+# 
+# 	a. Minimal nesting of loops and blocks
+# 	b. Math operations are kept separate
+# 	c. However, didn't create more variables than necessary
 
 # When trying to understand how the modulus works,
 # It's important to know how it treats cases where
