@@ -19,3 +19,20 @@ def caesar_cipher(string,key)
 		end
 		shifted_str
 end
+
+# Found another clean, short solution copied below, but the functionality is hidden by the #tr
+# from https://github.com/lockemind/caeser_cipher/blob/master/caeser_cipher.rb
+
+# def caesar_cipher text, key
+# 	alphabet = ('a'..'z').to_a.join
+# 	i = key % alphabet.size
+
+# 	encrypt = alphabet[i..-1] + alphabet[0...i]
+
+# 	text = text.tr(alphabet, encrypt)
+# 	text.tr(alphabet.upcase, encrypt.upcase)
+	
+# end
+
+#Not as readable, but code is shorter
+#I will need to study this.
