@@ -61,7 +61,8 @@ end
 # Things I can learn from this:
 # 1. Arrays initialized using ranges
 # 2. Accounts for capitals using separate arrays
-# 3. Uses the .each_char method
+# 3. Uses #each_char  
+	# Equivalent to #each for arrays
 # 4. Uses conditional assignment.  DRY
 # 5. Accounts for z to a wraparound using modulus
 # 6. The code is easily readable 
@@ -75,7 +76,6 @@ end
 # 	b. Math operations are kept separate
 # 	c. However, didn't create more variables than necessary
 
-# When trying to understand how the modulus works,
-# It's important to know how it treats cases where
-# The first operand is less than the second
+# It's important to know how the modulus treats cases where
+# the first operand < the second
 # e.g. 3%5 = 3, because you can't divide 3 by 5
