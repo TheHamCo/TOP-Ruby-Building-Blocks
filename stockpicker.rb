@@ -20,19 +20,19 @@ def stockpicker(prices)
 	# Iterate through the indices twice
 	# This is inefficient because of the condition: buy before selling
 	# There is no need to go through all of the indices (see first IF condition)
-	prices.each_index do |a|
-		prices.each_index do |b|
+	prices.each_with_index do |stock_a, a|
+		prices.each_with_index do |stock_b,b|
 			if b>a && # b has to be to the right of a in the array
 				# (Buy before you can sell)
 
 				# Find the largest profit possible
-				prices[b]-prices[a] >= prices[max]-prices[min] && 
+				stock_b-stock_a >= prices[max]-prices[min] && 
 
 				# This line is for the case where 
 				# there are multiple days where the prices are the same.
 				# It forces the earliest best day to buy and
 				# the earliest best day to sell
-				[prices[max], prices[min]] != [prices[b],prices[a]]
+				[prices[max], prices[min]] != [stock_b,stock_a]
 
 					max = b
 					min = a
