@@ -34,8 +34,8 @@ def stockpicker(prices)
 				# the earliest best day to sell
 				[prices[max], prices[min]] != [stock_b,stock_a]
 
-					max = b
-					min = a
+				max = b
+				min = a
 			end
 		end
 	end
