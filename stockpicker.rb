@@ -1,32 +1,41 @@
 def stockpicker(prices)
-	max = prices.index(prices.min)
+	# Implement a method stock_picker that takes in an array of stock prices, 
+	# one for each hypothetical day. It should return a pair of days representing 
+	# the best day to buy and the best day to sell. Days start at 0.
+	# Quick Tips:
+	# 	You need to buy before you can sell
+	# 	Pay attention to edge cases like 
+	# 		when the lowest day is the last day 
+	# 		or the highest day is the first day.
+
+
+	# Initialize the max amd min days
+	# Choose index of prices's minimum so conditional can work later
+	# for the "lowest day is the last day" edge case
+	max = prices.index(prices.min) # Need to improve this so it isn't confusing
 	min = prices.index(prices.max)
+
+	# Iterate through the indices twice
+	# This is inefficient because of the condition: buy before selling
+	# There is no need to go through all of the indices (see first if condition)
 	prices.each_index do |a|
-		# puts "a #{a}"
 		prices.each_index do |b|
-			# puts "b #{b}"
-			# puts "max = #{max}"
-			# puts "min = #{min}"
-			# puts "stuff min = #{prices[min]}"
-			# puts "stuff max = #{prices[max]}"
-			# puts "itsub #{prices[b]-prices[a]} pre sub #{(prices[max])-(prices[min])}"
-			# puts "#{prices[b]-prices[a] > prices[max]-prices[min]}"
-			if b>a && 
+			if b>a && # b has to be to the right of a in the array
+				# (Buy before you can sell)
+
+				# Find the largest profit possible
 				prices[b]-prices[a] >= prices[max]-prices[min] && 
+
+				# This line is for the case where 
+				# there are multiple days where the prices are the same.
+				# It forces the earliest best day to buy and
+				# the earliest best day to sell
 				[prices[max], prices[min]] != [prices[b],prices[a]]
-				# puts "found one!"
-				max = b
-				min = a
-				# puts "max = #{b}"
-				# puts "min = #{a}"
+
+					max = b
+					min = a
 			end
 		end
 	end
 	days = [min,max]
-	# puts "done! #{min} #{max}"
 end
-
-# stockpicker([17,3,6,9,15,8,6,1,10])
-# stockpicker([1,2])
-# prices[b]>prices[a] && 
-# b>a && 

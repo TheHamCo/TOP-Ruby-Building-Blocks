@@ -15,7 +15,7 @@ describe "stock picker" do
 	end
 
 	it "buys before it sells" do
-		stockpicker([100,100,100,1,1,1,2]).should == [3,6]
+		stockpicker([100,100,100,1,1,1,2,2]).should == [3,6]
 	end
 
 	it "implements the given case" do
