@@ -1,4 +1,4 @@
-# v1 5sep2015
+# v2 5sep2015
 def stockpicker(prices)
 	# 
 	# Implement a method stock_picker that takes in an array of stock prices, 
@@ -17,11 +17,11 @@ def stockpicker(prices)
 	max = prices.index(prices.min) # Need to improve this so it isn't confusing
 	min = prices.index(prices.max)
 
-	# Iterate through the indices twice
-	# This is inefficient because of the condition: buy before selling
-	# There is no need to go through all of the indices (see first IF condition)
+	# Iterate through the prices, comparing each price only with prices to the right
 	prices.each_with_index do |stock_a, a|
-		prices.each_with_index do |stock_b,b|
+		a.upto(prices.length-1) do |b|
+
+			stock_b = prices[b]
 			if b>a && # b has to be to the right of a in the array
 				# (Buy before you can sell)
 
