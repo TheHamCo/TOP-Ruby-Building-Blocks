@@ -1,4 +1,6 @@
+# v1 5sep2015
 def stockpicker(prices)
+	# 
 	# Implement a method stock_picker that takes in an array of stock prices, 
 	# one for each hypothetical day. It should return a pair of days representing 
 	# the best day to buy and the best day to sell. Days start at 0.
@@ -17,7 +19,7 @@ def stockpicker(prices)
 
 	# Iterate through the indices twice
 	# This is inefficient because of the condition: buy before selling
-	# There is no need to go through all of the indices (see first if condition)
+	# There is no need to go through all of the indices (see first IF condition)
 	prices.each_index do |a|
 		prices.each_index do |b|
 			if b>a && # b has to be to the right of a in the array
